@@ -1,0 +1,85 @@
+
+@use "./helper/variables" as *;
+
+@use "./helper/mixin" as *;
+
+
+
+%center-position{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+%center-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+%centertext{
+text-align: center;
+margin: $mainpadding + 70px 0  ;
+    h2{
+        font-weight: 800;
+        font-size: 75px;
+        letter-spacing:-2px; 
+        color: #ebeced;
+        margin-bottom: -54px;
+
+    }
+    p{
+        font-size: 14px
+    }
+    @include gt-xs{
+        h2{
+            font-size: 88px;
+            margin-bottom: -64px;
+    
+         }        
+         p{
+            font-size: 16px
+         } 
+    }
+    @include gt-sm{
+     h2{
+        font-size: 120px;
+        letter-spacing:-5px; 
+        margin-bottom: -80px;
+
+     }        
+     p{
+        font-size: 20px
+     }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%three-grid{
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, 320px);
+    justify-content: space-evenly;
+    gap: 20px;
+}

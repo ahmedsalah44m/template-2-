@@ -1,0 +1,86 @@
+@use "./helper/variables" as *;
+@use "./helper/mixin" as *;
+.landding{
+position: relative;
+@include overlay;
+    img{
+        
+        width: 100%;
+        height: 100vh;
+        background: cover;
+        top: 0;
+        z-index: -1;
+        object-fit: cover;
+        position: relative;
+
+
+    }
+    
+    .text{
+        color:  #fff;
+        width: 50%;
+        top: 30%;
+        position: absolute; 
+        background-color: $main_color_transparent;
+        display: flex;
+        
+        justify-content: end;
+        
+        line-height: 1.5;
+        box-shadow: $main_boxshadow;
+        padding: 15px  ;
+
+        .content{
+            max-width: 400px;
+        }
+
+
+        h1{
+            
+            font-size: 35px;
+            
+        }
+
+        @include lt-md{
+            width: 80%;
+            h1{
+                font-size: 30px;
+            }
+        }
+        @include lt-sm{
+            width: 100%;
+            h1{
+                font-size: 26px;
+            }
+        }
+
+
+    }
+    i{
+        @include xs{
+            
+                display: none;
+            
+        }
+    }
+    :where(i,.cercle){
+        color: #fff;
+        position: absolute;
+        font-size: 30px;
+        top: 50%;;
+        
+    }
+    i:nth-of-type(1){
+        right: 20px;
+        
+    }
+    i:nth-of-type(2){
+        left: 20px;
+        
+    }
+    .cercle{
+        left: 50%;
+        top: 90%;
+    }
+}
+

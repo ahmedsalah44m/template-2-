@@ -1,0 +1,82 @@
+/** @format */
+
+@use "./helper/variables" as *;
+@use "./helper/mixin" as *;
+header {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  .container {
+    margin: 0 $distance_md;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #726f71;
+      width: calc(100% - 15px);
+      left: 15px;
+      bottom: 0;
+      height: 2px;
+    }
+    .logo {
+      img {
+        width: 150px;
+      }
+    }
+    i.fa-bars{
+        display: none;
+        @include lt-md{
+            display: block;
+            // &:hover + nav{
+            //     display: block;
+            //     position: absolute;
+            //     background-color: hsl(0, 0%, 0% , .4);
+            //     right: 30px;
+            //     top: 40px;
+            //     ul{
+            //         display: flex;
+            //         flex-direction: column;
+
+                    
+            //     }
+            // }
+        }
+    }
+    nav {
+        @include lt-md{
+            display: none;
+        }
+      display: flex;
+
+      ul {
+        display: flex;
+        li {
+            text-align: center;
+            padding: 21px  0  ;
+            margin: 0 10px;
+            transition: $maint_transition;
+            z-index: 2;
+            border-bottom: 2px solid transparent;
+            
+            &:hover {
+                color: $main_color;
+                border-bottom-color: $main_color ;
+          }
+        }
+      }
+    }
+            i.fa-magnifying-glass{
+            border-left: 2px solid #fff  ;
+            margin-left:  $distance_sm;
+            padding:  5px 0 5px 15px ;
+        }
+
+  }
+
+
+  
+}

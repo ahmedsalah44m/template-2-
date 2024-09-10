@@ -1,0 +1,52 @@
+@use "./helper/variables" as *;
+
+@use "./helper/mixin" as *;
+
+
+
+.design{
+    background-image: url("../../../photos/design-features.jpg");
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    @include overlay;
+    .text{
+        color: #fff;
+        background-color:  $main_color_transparent;
+        width: 50%;
+        z-index: 1;
+        box-shadow: $main_boxshadow;
+        @include lt-md{
+            width: 80%;
+        }
+
+        .container{
+           margin: $distance_md;
+           min-width: 226px;
+            h3{
+                margin-bottom: 25px;
+            }
+            li{
+                transition: $maint_transition;
+                &:hover {
+                    color :$main-color;
+                }
+               i{
+                margin: $distance_sm  $distance_sm $distance_sm   0;
+               } 
+            }
+        }
+    }
+    img{
+        position: absolute;
+    bottom: -50px;
+    left: 100px;
+    @include lt-lg{
+        display: none;
+    }
+    }
+}

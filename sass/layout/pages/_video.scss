@@ -1,0 +1,38 @@
+@use "./helper/variables" as *;
+
+@use "./helper/mixin" as *;
+
+
+.video{
+    
+    position: relative;
+    video{
+        // height: 90vh;
+        width: 100%;
+    }
+    .text{
+        background-color: $main_color_transparent;
+        width: 100%;
+        color: #fff;
+        padding: $distance_md 0;
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        
+        text-align: center;
+        top: 35%;
+        @include lt-sm{
+            top: 0px;
+        }
+        h3{
+            font-size: 25px;
+        }
+        p{
+            margin: $distance_sm 0 $distance_lg;
+        }
+        a{
+            padding: 8px 33px 13px;
+            background: #353235;
+        }
+    }
+}

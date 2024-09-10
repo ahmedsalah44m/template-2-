@@ -1,0 +1,184 @@
+@use "./helper/variables" as *;
+
+@use "./helper/mixin" as *;
+
+
+.testimonials_and_skills{
+    .container{
+        display: flex;
+        >*{
+            flex-basis: 50%;
+            
+        }
+        @include lt-lg{
+            
+            flex-wrap: wrap;
+            &>*{
+                flex-basis: 100%;
+    
+            }
+        }
+
+        .globle-text{
+            h3{
+                font-size: 20px;
+                margin-bottom: $distance_sm;
+            }
+            margin-bottom: calc($distance_lg + 30px);
+        }
+            .testimonials{
+                
+                    .profile{
+                        @include flex-column-sm;
+                        align-items: center;
+                        width: fit-content;
+                        margin: 0 auto calc($distance_lg  + 20px) ;
+                        
+                        
+
+                            @include lt-sm{
+                                margin:  $distance_lg auto $distance_md   ;
+                            }
+                            img{
+                                width: 130px;
+                    
+                                margin:  0 $distance_md 0 0 ;
+                                border-radius: 50%;
+                                
+                            }
+                            .text{
+                                max-width: 400px;
+                                border-bottom:  1px solid #999;
+                                padding-bottom: $distance_sm;
+                                span{
+                                    display: block;
+                                    text-align: right;
+                                
+                                  color:#999 ;
+                                  font-style: italic;
+                                  
+                                }
+                            }
+                        
+                    
+                }
+            }
+        
+
+.profiles{
+    ul{
+        margin: auto;
+        width: fit-content;
+    }
+
+}
+
+
+            .skills{
+                .stats{
+                    max-width: 600px;
+                    padding: 0 $distance_lg;
+                    margin: auto;
+
+                    @include lt-sm{
+                        padding: 0 ;
+                    }
+                    >span{
+                        
+                        margin:  0 0 0 5px ;
+                        
+                    }
+                    div{
+                        height: 35px;
+                        width: 100%;
+                        background-color: #dedadc;
+                        margin: $distance_sm 0 $distance_lg 0 ;
+                        position: relative;
+                        
+                        
+                         
+                            
+                        
+                        
+                        span{
+                            
+                            left: 0;
+                            position: absolute;
+                            height: 100%;
+                            width: 90%;
+                            background-color: $main_color;
+
+                            &::before{
+                                content:"";
+                                position: absolute;   
+                                border: solid 7px;
+                                border-color: #000 transparent transparent transparent;
+                                right: 0;
+                                top: -10px;
+                                transform: translate(50%);
+                            }
+
+                            &::after{
+                                
+                                content:  attr(data-num)"%";
+                                position: absolute;
+                                right: 0%;
+                                transform: translate(50%);
+                                background-color: #000;
+                                top: -35px;
+                                padding: 5px;
+                                color: #fff;
+                                border-radius: 4px;
+                                
+                            }
+
+                       }
+
+
+                        
+                    }
+                }
+
+            }
+
+
+    }
+}
+
+
+
+.quote{
+    display: flex;
+    background-image: url("../../../photos/quote.jpg");
+    
+    background-size: cover;
+    
+    
+    padding: $distance_lg 0;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    @include overlay;
+    *{
+        z-index: 2;
+    }
+    p{
+        
+        font-size: 30px;
+        margin: $distance_sm ;
+
+
+        @include lt-md{
+        
+    
+            
+            font-size: 25px;
+         
+        }
+
+
+    }
+
+}
+
+

@@ -1,0 +1,39 @@
+@use "./helper/variables" as *;
+
+@use "./helper/mixin" as *;
+
+
+
+footer{
+    background-color: #121116;
+    color: #fff;
+    text-align: center;
+    padding: $distance_lg  0  $distance_md   0 ;
+    .content{
+
+        width:fit-content ;
+        margin: auto;
+        >*{
+            margin: $distance_sm 0  ;
+            cursor: pointer;
+        }
+        h4{
+            padding: $distance_sm $distance_md;
+            margin-top: $distance_lg;
+            font-size: 20px;
+            border-bottom: 1px solid #fff;
+        }
+        .social{
+            i{ 
+                margin-left: 5px;
+                transition:$maint_transition;
+                &:hover{
+                    color: $main-color;
+                }
+            }
+        }
+    }
+    p{
+        margin-top: 80px;
+    }
+}

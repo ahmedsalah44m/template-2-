@@ -1,0 +1,96 @@
+
+@use "./helper/variables" as *;
+
+@use "./helper/mixin" as *;
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+}
+ul{
+    
+    list-style: none;
+}
+a{
+    color: unset;
+    text-decoration: none;
+}
+
+:is(input, textarea){
+    outline: none;
+    // border: none;
+}
+
+
+.container{
+    margin: 0 35px;
+}
+
+.globle-text{
+    text-align: center;
+    max-width: 400px;
+    margin: $distance_lg auto;
+    h2{
+        font-size: 35px;
+    }
+    span{
+        display: block;
+        width: 50% ;
+        margin:$distance_md  auto $distance_sm ;
+        height: 1px;
+        background-color: #222;
+        position: relative;
+        &::before{
+            content: "";
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            border: 1px solid #222;
+            position: absolute;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+    }
+    p{
+        color: $font_p_color_sm;
+    }
+}
+
+
+.white-space{
+    margin: calc($distance_lg + 50px) 0;
+}
+
+
+
+.cercle{
+    display: flex;
+    li{
+        transition: .5s;
+        margin: 0 10px 0 0 ;
+        background-color: #fff;
+        border: 1px solid #444;
+        width: 20px;
+        height: 20px;
+        border-radius:50% ;
+        &:nth-child(2){
+            background-color: $main_color;
+        }
+    }
+
+    
+}
+
+

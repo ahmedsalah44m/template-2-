@@ -1,0 +1,42 @@
+/** @format */
+
+@use "./helper/variables" as *;
+
+@use "./helper/mixin" as *;
+
+.services {
+    line-height: $lineheight;
+  margin: calc($distance_lg + 20px) $distance_lg;
+  @include lt-sm{
+  margin: calc($distance_lg + 20px) 0;
+
+  }
+  .parent-box {
+    @include grid-column(350px);
+
+    margin: calc($distance_lg + 20px) 0;
+    gap: 40px 80px;
+
+    .box {
+      @include flex-column-sm;
+      .text {
+        max-width: 300px;
+        
+        h3{
+            color: $main_color;
+            font-size: 20px;
+            margin: 0 0 $distance_sm;
+        }
+        p {
+          color: $font_p_color_sm;
+          
+        }
+      }
+      i {
+        margin-right: 25px;
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

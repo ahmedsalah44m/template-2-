@@ -1,0 +1,92 @@
+/** @format */
+
+@use "./helper/variables" as *;
+
+@use "./helper/mixin" as *;
+
+.contact {
+    .container{
+        .message-place {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            
+            *{
+                display: block;
+                
+            }
+            form{
+                margin: 0 $distance_md;
+                flex: 1;
+                max-width: 800px;
+                
+
+                :is(input:not(input[type="submit"]), textarea) {
+                    width: 100%;
+                    margin:  0 0 $distance_md 0;
+                    padding: $distance_sm  ;
+                }
+                textarea{
+                    height: 150px;
+                };
+
+                input[type="submit"]{
+                    margin-left: auto;
+                    padding: $distance_sm;
+                    transition: $maint_transition;
+                    background-color: transparent;
+
+                    border: 2px solid $main-color ;
+                    
+                    
+                    width: fit-content;
+                    &:hover {
+                        background-color: $main-color;
+                        color: #fff;
+                      }
+                    
+                    
+                }
+            }
+
+
+            @include lt-sm{
+                flex-direction: column;
+                align-items: center;
+                form{
+                    margin-bottom: $distance_lg;
+                    input[type="submit"]{
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+
+
+
+
+
+
+
+
+        .info{
+            *{
+                margin-bottom: 10px;
+            }
+            .phone{
+                margin-bottom: $distance_elg;
+            }
+            h4{
+                font-weight: bold;
+                margin-bottom: $distance_sm;
+                font-size: 22px;
+            }
+            span{
+                color: $font_p_color_sm;
+            }
+            
+        }
+    }
+}
+

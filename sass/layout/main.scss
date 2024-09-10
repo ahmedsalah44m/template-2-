@@ -1,0 +1,27 @@
+@use "./pages/globle";
+
+@use "./helper/variables" as *;
+
+@use "./helper/mixin" as *;
+
+@use "./pages/header";
+
+@use "./pages/landding";
+
+@use "./pages/services";
+
+@use "./pages/design";
+
+@use "./pages/portfolio";
+
+@use "./pages/video";
+
+@use "./pages/about";
+
+@use "./pages/testimonialsAndSkills";
+
+@use "./pages/pricing";
+
+@use "./pages/contact";
+
+@use "./pages/footer";

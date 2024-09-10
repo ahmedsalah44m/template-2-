@@ -1,0 +1,75 @@
+@use "./helper/variables" as *;
+
+@use "./helper/mixin" as *;
+
+.portfolio{
+    ul{
+        display: flex;
+        justify-content: center;
+        margin: calc($distance_lg + 50px) auto $distance_lg;
+        width: 80%;
+        @include lt-sm{
+         flex-direction: column;  
+            text-align: center;
+        }
+        li{
+            padding: $distance_md calc($distance_md - 10px) ;
+            
+            transition: $maint_transition;
+            &:nth-child(1){
+                background-color: $main-color;
+                color: #fff;
+
+            }
+            &:hover{
+                background-color: $main-color;
+                color: #fff;
+            }
+        }
+    }
+
+    .port-imges{
+        @include grid-column(300px);
+        *{
+            transition: $maint_transition;
+        }
+        .box{
+            position: relative;
+            overflow: hidden;
+            &:hover{
+                img{
+                    transform: rotate(3deg) scale(1.2);
+                    opacity: .5;
+                }
+                &>span{
+                    bottom: 0px;
+                }    
+            }
+            img{
+                width: 100%;
+                padding: 5px;
+
+            }
+            >span{
+                position: absolute;
+                padding: 10px 20px  ;
+                width: 100%;
+                background-color: #fff;
+                left: 0;
+                bottom: -100px;
+                z-index: 1;
+                line-height: 1.7;
+                span{
+                    color: $main-color;
+                    display: block;
+                }
+                
+            }
+        }
+    }
+
+    a{
+       @include button;
+        
+    }
+}
